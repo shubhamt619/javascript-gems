@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Attributes</title>
+</head>
+
+<body>
+    <ul id="students_list">
+        <li onclick="printAge(1)" data-id="1" data-age="13">Sam</li>
+        <li onclick="printAge(2)" data-id="2" data-age="14">John</li>
+        <li onclick="printAge(3)" data-id="3" data-age="18">Alice</li>
+        <li onclick="printAge(4)" data-id="4" data-age="13">Bob</li>
+        <li onclick="printAge(5)" data-id="5" data-age="12">Nikki</li>
+    </ul>
+
+    <script>
+        function printAge(studentId) {
+            // Get the <li> which is clicked
+            let studentListItem = document.querySelector(`[data-id="${studentId}"]`);
+            // Get the age from the data attribute 'age'
+            let age = studentListItem.dataset.age;
+            // Finally log it to console, Duh !
+            console.log('Age of the clicked student is ', age);
+        }
+    </script>
+</body>
+
+</html>
